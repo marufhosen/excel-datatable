@@ -7,11 +7,12 @@ https://github.com/marufhosen/excel-datatable
 
 - clone this Repository by ``.
 - Inside server directory create a .env file and add these
-  - `MONGO_URI=your-mongodb-url`
+  - `DB_URI=your-mongodb-url`
 - Change the directory to server in the terminal and run:
   - `npm install`
   - `nodemon index.js`
-  - clone this Repository by ``.
+  
+- clone this Repository by ``.
 - Change the directory to excel-datatable in the terminal and run:
   - `npm install`
   - `npm start`
