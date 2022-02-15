@@ -1,6 +1,6 @@
 # Read excel data and creata data table
 
-### [Live Site](https://github.com/marufhosen/excel-datatable)
+### [Live Site](https://excel-data-table-319.netlify.app/)
 
 ### [Backend Repo](https://github.com/marufhosen/excel-datatable-server.git)
 
@@ -8,7 +8,7 @@
 
 - clone this Repository from `https://github.com/marufhosen/excel-datatable-server.git`.
 - Inside directory where is package.json and create a .env file
-  - `DB_URI=your-mongodb-url`
+  - `DB_URI=your-mongodb-uri`
 - Change the directory where is package.json, in the terminal and run:
   - `npm install`
   - `nodemon index.js`

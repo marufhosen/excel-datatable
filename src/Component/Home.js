@@ -42,11 +42,15 @@ const Home = () => {
       //post employer data
 
       axios
-        .post("http://localhost:5000/employer/addEmployee", dataField, {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
+        .post(
+          "https://excel-data-table-319.herokuapp.com/employer/addEmployee",
+          dataField,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        )
         .then(
           (res) => {
             console.log("hit res", res);
