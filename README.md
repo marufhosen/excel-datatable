@@ -1,22 +1,22 @@
-# read excel data and creata data table
+# Read excel data and creata data table
 
 Github Link:
 https://github.com/marufhosen/excel-datatable
 
 ## To run the project locally
 
-- clone this Repository by ``.
-- Inside server directory create a .env file and add these
+- clone this Repository from `https://github.com/marufhosen/excel-datatable-server.git`.
+- Inside directory where is package.json and create a .env file
   - `DB_URI=your-mongodb-url`
-- Change the directory to server in the terminal and run:
+- Change the directory where is package.json, in the terminal and run:
   - `npm install`
   - `nodemon index.js`
-  
-- clone this Repository by ``.
-- Change the directory to excel-datatable in the terminal and run:
+  - Server side url `http://localhost:5000`
+- clone this Repository from `https://github.com/marufhosen/excel-datatable.git`.
+- Change the directory where is package.json, in the terminal and run:
   - `npm install`
   - `npm start`
-- Open your browser and enter url `http://localhost:3000`
+  - Client url url `http://localhost:3000`
 
 ## Tech Stack of this Project
 
