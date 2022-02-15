@@ -10,6 +10,7 @@ const EmployerDataTable = (props) => {
         <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
             <div className="shadow overflow-hidden border border-gray-300 sm:rounded-lg">
+              {/* Employer data table */}
               <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-gray-50">
                   <tr>
@@ -41,7 +42,7 @@ const EmployerDataTable = (props) => {
                       scope="col"
                       className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                     >
-                      Date
+                      Start Date
                     </th>
                   </tr>
                 </thead>
@@ -71,7 +72,7 @@ const EmployerDataTable = (props) => {
                         {person.Age}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {person.Date}
+                        {person.Date.replace(/["]+/g, "")}
                       </td>
                     </tr>
                   ))}

@@ -10,9 +10,10 @@ const Home = () => {
   const [excelData, setExcelData] = useState({});
   const [error, setError] = useState(null);
   const [getExcelDataFromDb, setGetExcelDataFromDb] = useState(null);
-  const fileType = ["application/vnd.ms-excel"];
+  const fileType = ["application/vnd.ms-excel"]; //only read excel(xls) type data
 
   const handleFile = (e) => {
+    // get excel file from input
     let file = e.target.files[0];
     if (file && fileType.includes(file.type)) {
       let fileReader = new FileReader();
@@ -24,10 +25,10 @@ const Home = () => {
     } else {
       setError("Only xls files allwed!");
     }
-    // console.log(file);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    // convirt excel to json
     if (readExcelFile) {
       const workbook = XLSX.read(readExcelFile, { type: "buffer" });
       const worksheetName = workbook.SheetNames[0];
@@ -40,41 +41,27 @@ const Home = () => {
 
       //post employer data
 
-      axios.post("http://localhost:5000/employer/addEmployee", dataField).then(
-        (res) => {
-          console.log(res);
-          setReadExcelFile(null);
-        },
-        (err) => {
-          console.log(err);
-        }
-      );
-
-      //get posted data
-
-      axios.get("http://localhost:5000/employer/getEmployee").then(
-        (res) => {
-          if (res.data) {
-            let getData = res.data;
-            let dataLength = getData.length;
-            setGetExcelDataFromDb(getData[dataLength - 1]);
-            setReadExcelFile(null);
-          } else {
-            setGetExcelDataFromDb(null);
+      axios
+        .post("http://localhost:5000/employer/addEmployee", dataField, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+        .then(
+          (res) => {
+            console.log("hit res", res);
+            setGetExcelDataFromDb(res.data);
+          },
+          (err) => {
+            console.log(err);
           }
-        },
-        (err) => {
-          console.log(err);
-        }
-      );
+        );
     } else {
       setExcelData(null);
     }
   };
   return (
-    <div
-      className="w-full bg-blue-50 h-screen"
-    >
+    <div className="w-full bg-blue-50 min-h-screen">
       <div className="md:w-2/6 w-11/12 m-auto">
         <div>
           <p className="text-center p-5 font-bold">Handle Excel Data</p>
@@ -87,6 +74,7 @@ const Home = () => {
               onChange={handleFile}
             />
             <button
+              disabled={error}
               type="submit"
               className="text-center w-full bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 my-5"
             >
