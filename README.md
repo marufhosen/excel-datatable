@@ -1,7 +1,9 @@
 # Read excel data and creata data table
 
-Github Link:
+Live:
 https://github.com/marufhosen/excel-datatable
+Server Repo:
+https://github.com/marufhosen/excel-datatable-server.git
 
 ## To run the project locally
 
