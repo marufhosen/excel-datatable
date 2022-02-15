@@ -109,7 +109,7 @@ const Home = () => {
         <EmployerDataTable employers={getExcelDataFromDb}></EmployerDataTable>
       ) : (
         <p className="text-center text-sm text-red-500">
-          Please select a xecel(xls) file and view on the table.
+          Please select a excel(xls) file and view on the table.
         </p>
       )}
     </div>
