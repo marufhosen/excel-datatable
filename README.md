@@ -16,7 +16,7 @@ https://github.com/marufhosen/excel-datatable
 - Change the directory where is package.json, in the terminal and run:
   - `npm install`
   - `npm start`
-  - Client url url `http://localhost:3000`
+  - Client side url `http://localhost:3000`
 
 ## Tech Stack of this Project
 
