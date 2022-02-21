@@ -1,4 +1,4 @@
-# Read excel data and creata data table
+# Read excel data and create a data table
 
 ### [Live Site](https://excel-data-table-319.netlify.app/)
 
